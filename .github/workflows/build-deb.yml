@@ -24,8 +24,8 @@ jobs:
             build-essential debhelper \
             dh-python python3-all \
             python3-setuptools python3-rich \
-            python3-scapy \ 
-            pybuild-plugin-pyproject
+            python3-scapy
+            
 
       - name: Copy Debian packaging
         run: |
