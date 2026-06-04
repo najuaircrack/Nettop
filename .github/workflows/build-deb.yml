@@ -30,8 +30,13 @@ jobs:
         run: |
           dpkg-buildpackage -us -uc
 
-      - name: Upload package artifact
-        uses: actions/upload-artifact@v4
+      - name: Find package
+        run: |
+          mkdir artifacts
+          cp ../*.deb artifacts/
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v2
         with:
-          name: deb-package
-          path: ../*.deb
+          files: artifacts/*.deb
+          generate_release_notes: true
