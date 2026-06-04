@@ -21,11 +21,15 @@ jobs:
         run: |
           sudo apt update
           sudo apt install -y \
-            build-essential debhelper \
-            dh-python python3-all \
-            python3-setuptools python3-rich \
-            python3-scapy
-            
+            build-essential \
+            debhelper \
+            dh-python \
+            python3-all \
+            python3-setuptools \
+            python3-rich \
+            python3-scapy \
+            pybuild-plugin-pyproject \
+            python3-build
 
       - name: Copy Debian packaging
         run: |
