@@ -1,0 +1,15 @@
+[Unit]
+Description=Nettop network monitor
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+EnvironmentFile=-/etc/default/nettop
+ExecStart=/usr/bin/nettop run $NETTOP_ARGS
+Restart=on-failure
+RestartSec=3
+
+[Install]
+WantedBy=multi-user.target
+

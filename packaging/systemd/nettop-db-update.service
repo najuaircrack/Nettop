@@ -1,0 +1,10 @@
+[Unit]
+Description=Update Nettop DB-IP Lite location.csv
+Documentation=https://db-ip.com/db/lite.php
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/nettop update-db --output /var/lib/nettop/location.csv --kind city --workdir /var/lib/nettop/downloads
+

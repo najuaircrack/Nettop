@@ -1,0 +1,3 @@
+# Example:
+# NETTOP_ARGS="--dst 0.0.0.0 --port 0 --iface eth0 --quiet --jsonl /var/log/nettop/events.jsonl"
+NETTOP_ARGS="--dst 0.0.0.0 --port 0 --location-db /var/lib/nettop/location.csv --quiet"

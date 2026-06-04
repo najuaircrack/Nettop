@@ -1,0 +1,11 @@
+[Unit]
+Description=Weekly Nettop DB-IP Lite database update
+
+[Timer]
+OnCalendar=weekly
+Persistent=true
+RandomizedDelaySec=6h
+
+[Install]
+WantedBy=timers.target
+

@@ -1,0 +1,10 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: nettop
+Source: local
+
+Files: *
+Copyright: 2026 Nettop contributors
+License: MIT
+ Permission is hereby granted, free of charge, to use, copy, modify, merge,
+ publish, distribute, sublicense, and/or sell copies of the Software.
+

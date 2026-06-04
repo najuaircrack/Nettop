@@ -1,0 +1,23 @@
+Source: nettop
+Section: net
+Priority: optional
+Maintainer: Mohammed Najwan KC <aircracknaju@gmail.com>
+Build-Depends:
+ debhelper-compat (= 13),
+ dh-python,
+ pybuild-plugin-pyproject,
+ python3-all,
+ python3-setuptools,
+ python3-wheel,
+ python3-build
+Standards-Version: 4.6.2
+Homepage: https://github.com/najuaircrack/nettop
+Rules-Requires-Root: no
+
+Package: nettop
+Architecture: all
+Depends: ${python3:Depends}, ${misc:Depends}, python3-rich
+Recommends: python3-scapy
+Description: offline-first network monitoring TUI and CLI controller
+ Nettop captures packets, ranks talkers, tracks PPS/bytes/MACs/ports,
+ and resolves geo data from Nettop CSV range files only.

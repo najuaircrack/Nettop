@@ -1,0 +1,5 @@
+nettop (3.0.0) stable; urgency=medium
+
+  * Modular offline-first network monitor release.
+
+ -- Nettop contributors <root@localhost>  Thu, 04 Jun 2026 18:00:00 +0530

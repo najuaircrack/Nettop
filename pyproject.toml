@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "nettop"
+version = "3.0.0"
+description = "Offline-first lightweight network monitoring TUI with local CLI controller"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Nettop contributors" }]
+dependencies = [
+  "rich>=13.0",
+]
+
+[project.optional-dependencies]
+capture = ["scapy>=2.5"]
+full = ["rich>=13.0", "scapy>=2.5"]
+
+[project.scripts]
+nettop = "nettop.cli:main"
+nettopctl = "nettop.cli:nettopctl"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["nettop*"]
+
+[tool.setuptools.package-data]
+nettop = ["location.csv"]
