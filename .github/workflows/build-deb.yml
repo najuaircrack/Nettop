@@ -1,0 +1,37 @@
+name: Build Debian Package
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: |
+          sudo apt update
+          sudo apt install -y \
+            build-essential debhelper \
+            dh-python python3-all \
+            python3-setuptools python3-rich \
+            python3-scapy\ pybuild-plugin-pyproject
+
+      - name: Copy Debian packaging
+        run: |
+          cp -r packaging/debian ./debian
+
+      - name: Build package
+        run: |
+          dpkg-buildpackage -us -uc
+
+      - name: Upload package artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: deb-package
+          path: ../*.deb
