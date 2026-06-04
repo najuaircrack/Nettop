@@ -3,7 +3,11 @@ name: Build Debian Package
 on:
   push:
     tags:
-      - 'v*'
+      - "v*"
+
+permissions:
+  contents: write
+
 
 jobs:
   build:
@@ -20,7 +24,8 @@ jobs:
             build-essential debhelper \
             dh-python python3-all \
             python3-setuptools python3-rich \
-            python3-scapy\ pybuild-plugin-pyproject
+            python3-scapy \ 
+            pybuild-plugin-pyproject
 
       - name: Copy Debian packaging
         run: |
