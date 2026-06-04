@@ -2,7 +2,6 @@
 
 Nettop is a lightweight Linux-first network monitoring TUI with a scriptable CLI controller. It captures traffic, ranks source IPs, tracks PPS and byte rates, shows MAC activity, and resolves IP geography from Nettop's own offline `location.csv`.
 
-It does not call online APIs, does not phone home, and does not download geo data at runtime.
 
 ## Quick Start
 
